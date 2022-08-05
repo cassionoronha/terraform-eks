@@ -9,7 +9,7 @@ resource "aws_subnet" "private_a" {
 resource "aws_subnet" "private_b" {
   vpc_id            = "${aws_vpc.main.id}"
   cidr_block        = "${var.private_b_cidr_block}"
-  availability_zone = "${var.aws_region}a"
+  availability_zone = "${var.aws_region}b"
 
   tags = "${merge(local.common_tags, tomap({"Name" = "subnet-private_1b-${var.productname}-${var.suffix}"}))}"
 }
